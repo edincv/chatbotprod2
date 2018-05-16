@@ -48,7 +48,8 @@
     "wrench": "^1.5.9"
   },
   "engine": {
-    "node": ">= 4.2.4"
+    "node": "6.13.0",
+    "npm": "3.10.10"
   },
   "directories": {
     "test": "test"
