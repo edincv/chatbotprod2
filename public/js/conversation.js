@@ -35,15 +35,41 @@ var ConversationPanel = (function () {
   function guardaFeedback() {
     console.log("Funcion: Guarda Feedback");
     //OBTIENE EL VALOR DEL RADIO SELECCIONADO
-    var feedRadios = document.getElementsByName('evaluacion');
-    var valorRadio;
-    for (var i = 0; i < feedRadios.length; i++) {
-      if (feedRadios[i].checked) {
-        valorRadio = feedRadios[i].value;
+    //RADIO CLARIDAD
+    var feedRadios1 = document.getElementsByName('claridad');
+    var valorRadio1 = 0;
+    for (var i = 0; i < feedRadios1.length; i++) {
+      if (feedRadios1[i].checked) {
+        valorRadio1 = feedRadios1[i].value;
       }
     }
+    //RADIO FACILIDAD
+    var feedRadios2 = document.getElementsByName('facilidad');
+    var valorRadio2 = 0;
+    for (var i = 0; i < feedRadios2.length; i++) {
+      if (feedRadios2[i].checked) {
+        valorRadio2 = feedRadios2[i].value;
+      }
+    }
+    //RADIO SOLUCION
+    var feedRadios3 = document.getElementsByName('solucion');
+    var valorRadio3 = 0;
+    for (var i = 0; i < feedRadios3.length; i++) {
+      if (feedRadios3[i].checked) {
+        valorRadio3 = feedRadios3[i].value;
+      }
+    }
+    //RADIO SERVICIO
+    var feedRadios4 = document.getElementsByName('servicio');
+    var valorRadio4 = 0;
+    for (var i = 0; i < feedRadios4.length; i++) {
+      if (feedRadios4[i].checked) {
+        valorRadio4 = feedRadios4[i].value;
+      }
+    }
+
     //OBTIENE EL TEXTO DETALLE
-    var detalleFeedback = document.getElementById("detalleFeedback").value;
+    //var detalleFeedback = document.getElementById("detalleFeedback").value;
     //OBTIENE LA ULTIMA PREGUNTA
     var lastUserMsg = document.getElementsByClassName("from-user top");
     //INDICE DE LA ULTIMA PREGUNTA (NO DESPEDIDA)
@@ -52,13 +78,13 @@ var ConversationPanel = (function () {
     //OBTIENE CONVERSATION ID
     var convid = document.getElementById("convIdAux").value;
 
-    console.log("---FEEDBACK valorRadio: " + valorRadio);
-    console.log("---FEEDBACK detalleFeedback: " + detalleFeedback);
+    console.log("---FEEDBACK valorRadio: " + valorRadio1);
+    //console.log("---FEEDBACK detalleFeedback: " + detalleFeedback);
     console.log("---FEEDBACK pregunta: " + pregunta);
 
     //VALIDA FEEDBACK
-    if (valorRadio != null && valorRadio != undefined && valorRadio != "") {
-      Api.sendRequestFeedback(convid, valorRadio, detalleFeedback, pregunta);
+    if (valorRadio1 != null && valorRadio1 != undefined && valorRadio1 != "") {
+      Api.sendRequestFeedback(convid, valorRadio1, valorRadio2, valorRadio3, valorRadio4, pregunta);
     }
 
     //Recarga la pagina
