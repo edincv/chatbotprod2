@@ -27,20 +27,56 @@
             <div class="segments load">
               <div class="from-watson top">
                 <div class="message-inner">
-                  <p>Evalúa la respuesta proporcionada por AVI (Agente Virtual Infonavit):</p>
+                  <p>Califica nuestro servicio evaluando las siguientes preguntas del 1 a 5 donde 1 significa que estas muy insatisfecho y 5 estas muy satisfecho:</p>
+                  
                   <div class="formDiv">
+                    
                     <form action="">
-                      <input type="radio" name="evaluacion" value="correcta">
-                      <label class="etiquetaRadio">Correcta</label>
-                      <input type="radio" name="evaluacion" value="parcialmente_incorrecta">
-                      <label class="etiquetaRadio">Parcialmente incorrecta</label>
-                      <input type="radio" name="evaluacion" value="incorrecta">
-                      <label class="etiquetaRadio">Incorrecta</label>
+                      <p>La claridad de la información:</p>
+                      <input type="radio" name="claridad" value="1">
+                      <label class="etiquetaRadio">1</label>
+                      <input type="radio" name="claridad" value="2">
+                      <label class="etiquetaRadio">2</label>
+                      <input type="radio" name="claridad" value="3">
+                      <label class="etiquetaRadio">3</label>
+                      <input type="radio" name="claridad" value="4">
+                      <label class="etiquetaRadio">4</label>
+                      <input type="radio" name="claridad" value="5" checked="checked">
+                      <label class="etiquetaRadio">5</label>
+                      <p>Facilidad de uso:</p>
+                      <input type="radio" name="facilidad" value="1">
+                      <label class="etiquetaRadio">1</label>
+                      <input type="radio" name="facilidad" value="2">
+                      <label class="etiquetaRadio">2</label>
+                      <input type="radio" name="facilidad" value="3">
+                      <label class="etiquetaRadio">3</label>
+                      <input type="radio" name="facilidad" value="4">
+                      <label class="etiquetaRadio">4</label>
+                      <input type="radio" name="facilidad" value="5" checked="checked">
+                      <label class="etiquetaRadio">5</label>
+                      <p>¿Dimos solución a tu necesidad?:</p>
+                      <input type="radio" name="solucion" value="1">
+                      <label class="etiquetaRadio">1</label>
+                      <input type="radio" name="solucion" value="2">
+                      <label class="etiquetaRadio">2</label>
+                      <input type="radio" name="solucion" value="3">
+                      <label class="etiquetaRadio">3</label>
+                      <input type="radio" name="solucion" value="4">
+                      <label class="etiquetaRadio">4</label>
+                      <input type="radio" name="solucion" value="5" checked="checked">
+                      <label class="etiquetaRadio">5</label>
+                      <p>¿Recomendarías este servicio con tus amigos o conocidos?:</p>
+                      <input type="radio" name="servicio" value="1">
+                      <label class="etiquetaRadio">1</label>
+                      <input type="radio" name="servicio" value="2">
+                      <label class="etiquetaRadio">2</label>
+                      <input type="radio" name="servicio" value="3">
+                      <label class="etiquetaRadio">3</label>
+                      <input type="radio" name="servicio" value="4">
+                      <label class="etiquetaRadio">4</label>
+                      <input type="radio" name="servicio" value="5" checked="checked">
+                      <label class="etiquetaRadio">5</label>
                       <p>
-                        <label class="etiquetaRadio">Explica por qué no fue correcta:</label>
-                      </p>
-                      <p>
-                        <textarea id="detalleFeedback" rows="2" cols="auto"></textarea>
                         <input id="enviarFeedback" type="button" value="Enviar" onclick="ConversationPanel.guardaFeedback()">
                       </p>
                     </form>
