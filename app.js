@@ -151,14 +151,18 @@ app.get('/feedback', function(req, res) {
   //url_parts.query.contexto["texto"]="";
 
   var convid = url_parts.query.convid;
-  var rating = url_parts.query.rating;
-  var detalle = url_parts.query.detalle;
+  var claridad = url_parts.query.claridad;
+  var facilidad = url_parts.query.facilidad;
+  var solucion = url_parts.query.solucion;
+  var servicio = url_parts.query.servicio;
+  //var rating = url_parts.query.rating;
+  //var detalle = url_parts.query.detalle;
   var pregunta = url_parts.query.pregunta;
 
   //console.log(req);
   var respuesta;
   var request = require("request");
-  request("https://orquestadorbot-infonavit.mybluemix.net/webfeedback?convid="+convid+"&rating="+rating+"&detalle="+detalle+"&pregunta="+pregunta, function(error, response, body) {
+  request("https://orquestadorbot-infonavit.mybluemix.net/webfeedback2?convid="+convid+"&claridad="+claridad+"&facilidad="+facilidad+"&solucion="+solucion+"&servicio="+servicio+"&pregunta="+pregunta, function(error, response, body) {
       console.log("La espuesta de bot es:");
       console.log(body);
 
