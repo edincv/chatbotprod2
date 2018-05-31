@@ -89,7 +89,7 @@ var Api = (function() {
   }
   //________------_____EDIN_________---------________------___---
   // Send a message request to the server
-  function sendRequestFeedback(convid,rating,detalle,pregunta) {
+  function sendRequestFeedback(convid,claridad,facilidad,solucion,servicio,pregunta) {
     //console.log("-----sendRequest-----" + context);
     // Build request payload
     var payloadToWatson = {};
@@ -97,14 +97,30 @@ var Api = (function() {
       //console.log("-----ENVIANDO TEXT-----" + text);
       payloadToWatson.convid = convid;
     }
-    if (rating) {
-      //console.log("-----ENVIANDO CONTEXT-----" + context);
-      payloadToWatson.rating = rating;
+    if (claridad) {
+      //console.log("-----ENVIANDO TEXT-----" + text);
+      payloadToWatson.claridad = claridad;
     }
-    if (detalle) {
-      //console.log("-----ENVIANDO CONTEXT-----" + context);
-      payloadToWatson.detalle = detalle;
+    if (facilidad) {
+      //console.log("-----ENVIANDO TEXT-----" + text);
+      payloadToWatson.facilidad = facilidad;
     }
+    if (convid) {
+      //console.log("-----ENVIANDO TEXT-----" + text);
+      payloadToWatson.solucion = solucion;
+    }
+    if (convid) {
+      //console.log("-----ENVIANDO TEXT-----" + text);
+      payloadToWatson.servicio = servicio;
+    }
+    //if (rating) {
+      //console.log("-----ENVIANDO CONTEXT-----" + context);
+      //payloadToWatson.rating = rating;
+    //}
+    //if (detalle) {
+      //console.log("-----ENVIANDO CONTEXT-----" + context);
+      //payloadToWatson.detalle = detalle;
+    //}
     if (pregunta) {
       //console.log("-----ENVIANDO CONTEXT-----" + context);
       payloadToWatson.pregunta = pregunta;
@@ -121,7 +137,8 @@ var Api = (function() {
       Api.setRequestPayload(params);
     //}
 
-    http.open('GET', messageEndpointFeed+"?convid="+convid+"&rating="+rating+"&detalle="+detalle+"&pregunta="+pregunta, false);
+    //http.open('GET', messageEndpointFeed+"?convid="+convid+"&rating="+rating+"&detalle="+detalle+"&pregunta="+pregunta, false);
+    http.open('GET', messageEndpointFeed+"?convid="+convid+"&claridad="+claridad+"&facilidad="+facilidad+"&solucion="+solucion+"&servicio="+servicio+"&pregunta="+pregunta, false);
     console.log("llamo url");
     console.log("headers");
     http.setRequestHeader("Content-type", "application/json; charset=utf-8");
